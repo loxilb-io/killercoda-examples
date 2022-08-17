@@ -35,7 +35,7 @@ sudo ip -n l3e1 link set eth0 mtu 7000 up
 $LBHCMD ip addr add 31.31.31.254/24 dev enp1
 $HCMD l3e1 ifconfig eth0 31.31.31.1/24 up
 $HCMD l3e1 ip route add default via 31.31.31.254
-$HCMD l3e1 lo up
+$HCMD l3e1 ifconfig lo up
 sleep 1
 
 
@@ -44,9 +44,9 @@ sudo ip -n loxilb link add enp2 type veth peer name eth0 netns l3e2
 sudo ip -n loxilb link set enp2 mtu 9000 up
 sudo ip -n l3e2 link set eth0 mtu 7000 up
 $LBHCMD ip addr add 32.32.32.254/24 dev enp2
-$HCMD l3e2 ifconfig eth0 32.32.32.2/24 up
+$HCMD l3e2 ifconfig eth0 32.32.32.1/24 up
 $HCMD l3e2 ip route add default via 32.32.32.254
-$HCMD l3e2 lo up
+$HCMD l3e2 ifconfig lo up
 sleep 1
 
 echo '============= Configure load-balancer end-point l3e3 ============'

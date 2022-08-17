@@ -15,11 +15,11 @@
       },
       {
         "title": "Configure LoxiLB Rules and Check configuration",
-        "text": "step1.md"
+        "text": "step2.md"
       },
       {
         "title": "Send traffics and check result",
-        "text": "step1.md"
+        "text": "step3.md"
       }
     ],
     "finish": {
