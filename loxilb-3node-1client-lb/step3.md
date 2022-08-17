@@ -1,12 +1,25 @@
+Install WSK HTTP Traffic generator benchmark tool:
+```
+sudo apt-get install build-essential libssl-dev git -y 
+git clone https://github.com/wg/wrk.git wrk 
+cd wrk 
+sudo make 
+sudo cp wrk /usr/local/bin 
+```
 
+Install sample http server:
+```
+cd ~/
+go build server.go
+```
 
-1. Run HTTP Server one endpoint1 following:
+Run HTTP Server one endpoint1 following:
 ```
 sudo ip netns exec l3e1 bash
 ./server
 ```
 
-2. Run HTTP Server one endpoint2 following:
+Run HTTP Server one endpoint2 following:
 
 Open New Terminal
 ```
@@ -14,7 +27,7 @@ sudo ip netns exec l3e2 bash
 ./server
 ```
 
-3. Run HTTP Server one endpoint3 following:
+Run HTTP Server one endpoint3 following:
 
 Open New Terminal
 ```
@@ -22,7 +35,7 @@ sudo ip netns exec l3e3 bash
 ./server
 ```
 
-2. Run HTTP traffic generator on client following:
+Run HTTP traffic generator on client following:
 
 Open New Terminal
 ```

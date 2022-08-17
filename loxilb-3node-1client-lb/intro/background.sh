@@ -69,14 +69,6 @@ $HCMD l3c1 ip route add default via 100.100.100.254
 $HCMD l3c1 lo up
 sleep 1
 
-echo '============= install wrk(http traffic generator) Tool ============'
-sudo apt-get install build-essential libssl-dev git -y 
-git clone https://github.com/wg/wrk.git wrk 
-cd wrk 
-sudo make 
-sudo cp wrk /usr/local/bin 
-cd ../
-
 echo '============= install http echo server ============'
 cd ~/
 go build server.go
