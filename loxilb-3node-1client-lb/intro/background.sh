@@ -69,10 +69,4 @@ $HCMD l3c1 ip route add default via 100.100.100.254
 $HCMD l3c1 lo up
 sleep 1
 
-echo '============= install http echo server ============'
-cd ~/
-go build server.go
-echo Hello and welcome to LoxiLB sample scenario!
-sleep 3
-
 echo done > /tmp/background0
