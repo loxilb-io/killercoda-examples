@@ -1,8 +1,13 @@
 set -x # to test stderr output in /var/log/killercoda
 echo starting... # to test stdout output in /var/log/killercoda
 
-echo '============= Make 3 Endpoints, 1 Client and 1 LoxiLB host ============'
+echo '============= Install LoxiLB Docker ============'
+docker pull ghcr.io/loxilb-io/loxilb:latest
+docker run -u root --cap-add SYS_ADMIN   --restart unless-stopped --privileged -dit -v /dev/log:/dev/log --name loxilb ghcr.io/loxilb-io/loxilb:latest
+apt install -y net-tools
+sleep 3
 
+echo '============= Make 3 Endpoints, 1 Client and 1 LoxiLB host ============'
 docker=$1
 HADD="sudo ip netns add "
 LBHCMD="sudo ip netns exec loxilb "
@@ -20,6 +25,7 @@ $HADD l3e1
 $HADD l3e2
 $HADD l3e3
 $HADD l3c1
+sleep 1
 
 
 echo '============= Configure load-balancer end-point l3e1 ============'
@@ -30,6 +36,7 @@ $LBHCMD ip addr add 31.31.31.254/24 dev enp1
 $HCMD l3e1 ifconfig eth0 31.31.31.1/24 up
 $HCMD l3e1 ip route add default via 31.31.31.254
 $HCMD l3e1 lo up
+sleep 1
 
 
 echo '============= Configure load-balancer end-point l3e2 ============'
@@ -40,6 +47,7 @@ $LBHCMD ip addr add 32.32.32.254/24 dev enp2
 $HCMD l3e2 ifconfig eth0 32.32.32.2/24 up
 $HCMD l3e2 ip route add default via 32.32.32.254
 $HCMD l3e2 lo up
+sleep 1
 
 echo '============= Configure load-balancer end-point l3e3 ============'
 sudo ip -n loxilb link add enp3 type veth peer name eth0 netns l3e3
@@ -49,6 +57,7 @@ $LBHCMD ip addr add 17.17.17.254/24 dev enp3
 $HCMD l3e3 ifconfig eth0 17.17.17.1/24 up
 $HCMD l3e3 ip route add default via 17.17.17.254
 $HCMD l3e3 lo up
+sleep 1
 
 echo '============= Configure load-balancer end-point l3c1 ============'
 sudo ip -n loxilb link add enp4 type veth peer name eth0 netns l3c1
@@ -58,6 +67,7 @@ $LBHCMD ip addr add 100.100.100.254/24 dev enp4
 $HCMD l3c1 ifconfig eth0 100.100.100.1/24 up
 $HCMD l3c1 ip route add default via 100.100.100.254
 $HCMD l3c1 lo up
+sleep 1
 
 echo '============= install wrk(http traffic generator) Tool ============'
 sudo apt-get install build-essential libssl-dev git -y 
@@ -70,6 +80,7 @@ cd ../
 echo '============= install http echo server ============'
 cd ~/
 go build server.go
-
+echo Hello and welcome to LoxiLB sample scenario!
 sleep 3
+
 echo done > /tmp/background0
