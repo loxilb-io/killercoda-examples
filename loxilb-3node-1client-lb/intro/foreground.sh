@@ -1,6 +1,7 @@
 echo '============= Install LoxiLB Docker ============'
 docker pull ghcr.io/loxilb-io/loxilb:latest
 docker run -u root --cap-add SYS_ADMIN   --restart unless-stopped --privileged -dit -v /dev/log:/dev/log --name loxilb ghcr.io/loxilb-io/loxilb:latest
+apt install -y net-tools
 sleep 3
 
 echo '============= Make 3 Endpoints, 1 Client and 1 LoxiLB host ============'
@@ -76,5 +77,4 @@ cd ../
 echo '============= install http echo server ============'
 cd ~/
 go build server.go
-
 echo Hello and welcome to LoxiLB sample scenario!
