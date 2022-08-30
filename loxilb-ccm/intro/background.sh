@@ -41,4 +41,11 @@ mkdir -p /root/loxilb-io/loxilb/
 
 chmod 777 chmod loxilb_cli_install.sh
 chmod 777 chmod loxilb_install.sh
+
+ip netns add loxilb
+sudo ip -n loxilb link add enp1 type veth peer name loxilb-in netns 1
+sudo ip -n loxilb link set enp1 mtu 9000 up
+sudo ip netns exec loxilb ip addr add 172.18.0.254/24 dev enp1
+sudo ip netns exec loxilb ifconfig lo 127.0.0.1 up
+
 echo done > /tmp/background0
