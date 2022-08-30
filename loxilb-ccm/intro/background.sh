@@ -34,18 +34,16 @@ LIBBPF_FORCE=on LIBBPF_DIR=`pwd`/libbpf/src/build ./configure
 make
 sudo cp -f tc/tc /usr/local/sbin/ntc
 cd ~
-sleep 3
 echo '============= Build LoxiLB CLI ============'
 git clone https://github.com/loxilb-io/loxicmd.git
 cd loxicmd
 go get .
-make
-sleep 3
+make build
 echo '============= Build LoxiLB ============'
 git clone https://github.com/loxilb-io/loxilb.git
 cd loxilb
 ./ebpf/utils/mkllb_bpffs.sh
-make
+make build
 cd ebpf/libbpf/src
 sudo make install
 cd ~
