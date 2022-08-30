@@ -1,6 +1,7 @@
 set -x # to test stderr output in /var/log/killercoda
 echo starting... # to test stdout output in /var/log/killercoda
 echo '============= Install Kubernetes with Kind Tool ============'
+sudo su root
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 sleep 1
