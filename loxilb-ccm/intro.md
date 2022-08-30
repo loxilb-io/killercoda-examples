@@ -1,14 +1,14 @@
-#  Achieving 3 Enpoints Load Balancing with LoxiLB
+#  Learn How To Configure LoxiLB and CCM to integrate with Kubernetes
 
-Welcome to the tutorial where you learn how to configure LoxiLB.
+Welcome to the tutorial where you learn how to configure LoxiLB with Kubernetes CCM.
 
-On a serious note, we will look into how to use LoxiLB for multi http endpoints use cases. 
+On a serious note, we will look into how to use LoxiLB for kubernetes LoadBalancer service use cases. 
 
 LoxiLB was built with this in mind and it in this tutorial you will learn:
 
 * How to configure **LoxiLB**: How to setup it and How to use loxi CLI.
-* How to do a troublue shoot.
-* How to test a performance.
+* How to configure Loxi-CCM to intergrate with Kubernetes.
+* How to deploy kubernetes LoadBalancer service.
 
 ### Feedback
 
@@ -17,4 +17,3 @@ Let us know on https://github.com/loxilb-io/loxilb or #loxilb slack channel link
 
 ### Contributed by:
 contact@netlox.io
-

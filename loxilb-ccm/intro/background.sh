@@ -21,7 +21,7 @@ sleep 1
 
 echo '============= Install LoxiLB Docker ============'
 docker pull ghcr.io/loxilb-io/loxilb:latest
-docker run -u root --cap-add SYS_ADMIN --net=kind  --restart unless-stopped --privileged -dit -v /dev/log:/dev/log --name loxilb ghcr.io/loxilb-io/loxilb:latest
+docker run -u root --cap-add SYS_ADMIN --net=kind  --restart unless-stopped --privileged -dit -v /dev/log:/dev/log --name loxilb ghcr.io/loxilb-io/loxilb:latest --host=0.0.0.0
 apt install -y net-tools
 sleep 3
 
