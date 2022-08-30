@@ -27,7 +27,9 @@
     },
     "assets": {
       "host01": [
-        {"file": "server.go", "target": "~/", "chmod": "+rw"}
+        {"file": "server.go", "target": "~/", "chmod": "+rw"},
+        {"file": "loxilb_cli_install.sh", "target": "~/", "chmod": "+rw"},
+        {"file": "loxilb_install.sh", "target": "~/", "chmod": "+rw"}
       ]   
     }
   },
