@@ -14,11 +14,11 @@
         "text": "step1.md"
       },
       {
-        "title": "Configure LoxiLB Rules and Check configuration",
+        "title": "Make Pods to use LoadBalancer Service",
         "text": "step2.md"
       },
       {
-        "title": "Send traffics and check result",
+        "title": "Set up LoadBalancer Service based on LoxiLB",
         "text": "step3.md"
       }
     ],
