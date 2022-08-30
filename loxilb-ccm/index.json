@@ -1,0 +1,37 @@
+{
+  "title": "LoxiLB CCM Test",
+  "description": "Learn How To Configure LoxiLB and CCM to integrate with Kubernetes",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground": "intro/foreground.sh",
+      "background": "intro/background.sh",
+      "verify": "intro/verify.sh"      
+    },
+    "steps": [
+      {
+        "title": "Let's check our topology first",
+        "text": "step1.md"
+      },
+      {
+        "title": "Configure LoxiLB Rules and Check configuration",
+        "text": "step2.md"
+      },
+      {
+        "title": "Send traffics and check result",
+        "text": "step3.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {"file": "server.go", "target": "~/", "chmod": "+rw"}
+      ]   
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
