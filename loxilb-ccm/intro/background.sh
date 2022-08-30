@@ -49,6 +49,4 @@ git clone https://github.com/loxilb-io/loxicmd.git
 cd loxicmd
 go get .
 make
-
-sleep 60
 echo done > /tmp/background0
