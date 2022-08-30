@@ -20,24 +20,33 @@ EOF
 kind create cluster --name k8s-playground --config kind-config.yaml
 sleep 1
 
-echo '============= Install LoxiLB Docker ============'
-docker pull ghcr.io/loxilb-io/loxilb:latest
-docker run -u root --cap-add SYS_ADMIN --net=kind  --restart unless-stopped --privileged -dit -v /dev/log:/dev/log --name loxilb ghcr.io/loxilb-io/loxilb:latest --host=0.0.0.0
-apt install -y net-tools
-sleep 3
-
-echo '============= Make Endpoints, Client and 1 LoxiLB host ============'
-docker=$1
-HADD="sudo ip netns add "
-LBHCMD="sudo ip netns exec loxilb "
-HCMD="sudo ip netns exec "
-
-id=`docker ps -f name=loxilb | cut  -d " "  -f 1 | grep -iv  "CONTAINER"`
-echo $id
-pid=`docker inspect -f '{{.State.Pid}}' $id`
-if [ ! -f /var/run/netns/loxilb ]; then
-  sudo touch /var/run/netns/loxilb
-  sudo mount -o bind /proc/$pid/ns/net /var/run/netns/loxilb
-fi
-
+echo '============= Build iproute2 ============'
+apt install -y clang llvm libelf-dev gcc-multilib libpcap-dev vim net-tools linux-tools-$(uname -r) elfutils dwarves git libbsd-dev bridge-utils wget unzip build-essential bison flex iproute2
+git clone https://github.com/loxilb-io/iproute2.git
+cd iproute2
+cd libbpf/src/
+mkdir build
+DESTDIR=build make install
+cd ../../
+export PKG_CONFIG_PATH=$PKG_CONFIG_PATH:`pwd`/libbpf/src/
+LIBBPF_FORCE=on LIBBPF_DIR=`pwd`/libbpf/src/build ./configure
+make
+sudo cp -f tc/tc /usr/local/sbin/ntc
+cd -
+sleep 1
+echo '============= Build LoxiLB ============'
+git clone https://github.com/loxilb-io/loxilb.git
+cd loxilb
+./ebpf/utils/mkllb_bpffs.sh
+make
+cd ebpf/libbpf/src
+sudo make install
+cd -
+sleep 1
+echo '============= Build LoxiLB CLI ============'
+git clone https://github.com/loxilb-io/loxicmd.git
+cd loxicmd
+go get .
+make
+sleep 1
 echo done > /tmp/background0
