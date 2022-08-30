@@ -42,10 +42,23 @@ mkdir -p /root/loxilb-io/loxilb/
 chmod 777 chmod loxilb_cli_install.sh
 chmod 777 chmod loxilb_install.sh
 
+echo '============= Build basic network topology ============'
+
 ip netns add loxilb
+ip netns add client
 sudo ip -n loxilb link add enp1 type veth peer name loxilb-in netns 1
+sudo ip -n loxilb link add enp2 type veth peer name enp1 netns client
 sudo ip -n loxilb link set enp1 mtu 9000 up
+sudo ip -n loxilb link set enp2 mtu 9000 up
+sudo ip -n client link set enp1 mtu 9000 up
+sudo ifconfig loxilb-in 0.0.0.0 up
 sudo ip netns exec loxilb ip addr add 172.18.0.254/24 dev enp1
+sudo ip netns exec loxilb ip addr add 123.123.123.254/24 dev enp2
 sudo ip netns exec loxilb ifconfig lo 127.0.0.1 up
+sudo ip netns exec client ip addr add 123.123.123.2/24 dev enp1
+sudo ip netns exec client ifconfig lo 127.0.0.1 up
+
+bridge_name=`brctl show | grep br- | awk '{ print $1 }'`
+brctl addif $bridge_name loxilb-in
 
 echo done > /tmp/background0

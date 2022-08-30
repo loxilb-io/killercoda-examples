@@ -14,12 +14,20 @@
         "text": "step1.md"
       },
       {
-        "title": "Make Pods to use LoadBalancer Service",
+        "title": "Compile & Build LoxiLB from source code",
         "text": "step2.md"
       },
       {
-        "title": "Set up LoadBalancer Service based on LoxiLB",
+        "title": "Compile & Build LoxiLB Command from source code",
         "text": "step3.md"
+      },
+      {
+        "title": "Make Pod",
+        "text": "step4.md"
+      },
+      {
+        "title": "Set up LoadBalancer Service based on LoxiLB",
+        "text": "step5.md"
       }
     ],
     "finish": {
