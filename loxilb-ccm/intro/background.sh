@@ -35,16 +35,13 @@ make
 sudo cp -f tc/tc /usr/local/sbin/ntc
 cd ~
 echo '============= Build LoxiLB CLI ============'
-git clone https://github.com/loxilb-io/loxicmd.git
-cd loxicmd
-go get .
-make build
-echo '============= Build LoxiLB ============'
-git clone https://github.com/loxilb-io/loxilb.git
-cd loxilb
-./ebpf/utils/mkllb_bpffs.sh
-make build
-cd ebpf/libbpf/src
-sudo make install
+git clone https://github.com/loxilb-io/loxicmd.git && cd loxicmd && go get . && make && cp ./loxicmd /usr/local/sbin/loxicmd && cd ~ && rm -fr loxicmd
 cd ~
+echo '============= Build LoxiLB ============'
+wget https://github.com/osrg/gobgp/releases/download/v3.5.0/gobgp_3.5.0_linux_amd64.tar.gz && tar -xzf gobgp_3.5.0_linux_amd64.tar.gz &&  mv gobgp* /usr/sbin/ && rm LICENSE README.md
+mkdir -p /opt/loxilb
+mkdir -p /opt/loxilb/cert/
+mkdir -p /root/loxilb-io/loxilb/
+cd ~
+git clone https://github.com/loxilb-io/loxilb  /root/loxilb-io/loxilb/ && cd /root/loxilb-io/loxilb/ && go get . && make && cp ebpf/utils/mkllb_bpffs.sh /usr/local/sbin/mkllb_bpffs && cp api/certification/* /opt/loxilb/cert/ && cd ~
 echo done > /tmp/background0
