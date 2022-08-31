@@ -31,7 +31,7 @@ metadata:
   name: loxilb-config
   namespace: kube-system
 data:
-  apiServerURL: "http://172.18.0.3:11111"
+  apiServerURL: "http://172.18.0.254:11111"
   externalIPcidr: 123.123.123.0/24
 ---
 apiVersion: apps/v1
