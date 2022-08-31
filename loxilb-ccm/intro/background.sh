@@ -58,6 +58,8 @@ sudo ip netns exec loxilb ifconfig lo 127.0.0.1 up
 sudo ip netns exec client ip addr add 1.1.1.2/24 dev enp1
 sudo ip netns exec client ifconfig lo 127.0.0.1 up
 sudo ip netns exec client route add -net 123.123.123.0 netmask 255.255.255.0 gw 1.1.1.254
+docker exec -it k8s-playground-worker ip route add 1.1.1.0/24 via 172.18.0.254 dev eth0
+docker exec -it k8s-playground-control-plane ip route add 1.1.1.0/24 via 172.18.0.254 dev eth0
 
 bridge_name=`brctl show | grep br- | awk '{ print $1 }'`
 brctl addif $bridge_name loxilb-in

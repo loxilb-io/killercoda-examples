@@ -20,6 +20,7 @@ spec:
       - containerPort: 80
         name: http-web-svc
 EOF
+```
 
 Deploy pod with following command:
 ```
@@ -56,7 +57,7 @@ EOF
 Deploy pod with following command:
 
 ```
-kubectl apply -f loxi-nginx.yaml
+kubectl apply -f loxi-service.yaml
 ```
 
 check service status with following command:

@@ -93,7 +93,6 @@ kubectl create -f loxi-ccm.yaml
 You can check CCM daemon status trough following command:
 
 ```
-kubectl get pods -n kubesystem | grep loxi
 kubectl get pods -A | grep loxi
 kube-system          loxi-cloud-controller-manager-wzjqz                    1/1     Running   0          12m
 ```
