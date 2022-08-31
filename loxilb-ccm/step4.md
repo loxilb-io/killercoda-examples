@@ -1,23 +1,101 @@
 
 
-Make External Service as follows referencing [link](https://loxilb-io.github.io/loxilbdocs/ccm/) :
+we need to configure load-balancer CCM as follows referencing [link](https://loxilb-io.github.io/loxilbdocs/ccm/) :
 
 ```
-cat > loxi-service.yaml <<EOF
+echo '============= Deploy Loxi CCM ============'
+cat > loxi-ccm.yaml <<EOF
 ---
 apiVersion: v1
-kind: Service
+kind: ServiceAccount
 metadata:
-  name: nginx-service
+  name: loxi-cloud-controller-manager
+  namespace: kube-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: system:cloud-controller-manager
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: cluster-admin
+subjects:
+  - kind: ServiceAccount
+    name: loxi-cloud-controller-manager
+    namespace: kube-system
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: loxilb-config
+  namespace: kube-system
+data:
+  apiServerURL: "http://172.18.0.254:11111"
+  externalIPcidr: 123.123.123.0/24
+---
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  labels:
+    k8s-app: loxi-cloud-controller-manager
+  name: loxi-cloud-controller-manager
+  namespace: kube-system
 spec:
-  type: LoadBalancer
   selector:
-    app.kubernetes.io/name: proxy
-  ports:
-  - name: name-of-service-port
-    protocol: TCP
-    port: 8888
-    targetPort: http-web-svc
+    matchLabels:
+      k8s-app: loxi-cloud-controller-manager
+  template:
+    metadata:
+      labels:
+        k8s-app: loxi-cloud-controller-manager
+    spec:
+      serviceAccountName: loxi-cloud-controller-manager
+      containers:
+        - name: loxi-cloud-controller-manager
+          imagePullPolicy: Always
+          image: loxilbio/loxi-ccm:beta
+          command:
+            - /bin/loxi-cloud-controller-manager
+          args:
+            - --v=1
+            - --cloud-provider=netlox
+            - --use-service-account-credentials
+            - --leader-elect-resource-name=loxi-cloud-controller-manager
+          env:
+            - name: LOXILB_API_SERVER
+              valueFrom:
+                configMapKeyRef:
+                  name: loxilb-config
+                  key: apiServerURL
+            - name: LOXILB_EXTERNAL_CIDR
+              valueFrom:
+                configMapKeyRef:
+                  name: loxilb-config
+                  key: externalIPcidr
+      tolerations:
+        - key: node.cloudprovider.kubernetes.io/uninitialized
+          value: "true"
+          effect: NoSchedule
+        - key: node-role.kubernetes.io/control-plane
+          effect: NoSchedule
+      nodeSelector:
+        kubernetes.io/hostname: k8s-playground-worker
 EOF
-kubectl create -f loxi-service.yaml
 ```
+
+Deploy CCM DaemonSet service through following command:
+
+```
+kubectl create -f loxi-ccm.yaml
+```
+
+You can check CCM daemon status trough following command:
+
+```
+kubectl get pods -n kubesystem | grep loxi
+kubectl get pods -A | grep loxi
+kube-system          loxi-cloud-controller-manager-wzjqz                    1/1     Running   0          12m
+```
+
+If you can search `loxi-cloud-controller-manager-xxx` , it's success

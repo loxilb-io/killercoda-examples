@@ -22,11 +22,11 @@
         "text": "step3.md"
       },
       {
-        "title": "Make Pod",
+        "title": "Deploy LoxiLB CCM",
         "text": "step4.md"
       },
       {
-        "title": "Set up LoadBalancer Service based on LoxiLB",
+        "title": "Set up Pod LoadBalancer Service based on LoxiLB",
         "text": "step5.md"
       }
     ],
