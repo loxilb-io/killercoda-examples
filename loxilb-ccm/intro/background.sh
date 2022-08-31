@@ -53,10 +53,11 @@ sudo ip -n loxilb link set enp2 mtu 9000 up
 sudo ip -n client link set enp1 mtu 9000 up
 sudo ifconfig loxilb-in 0.0.0.0 up
 sudo ip netns exec loxilb ip addr add 172.18.0.254/24 dev enp1
-sudo ip netns exec loxilb ip addr add 123.123.123.254/24 dev enp2
+sudo ip netns exec loxilb ip addr add 1.1.1.254/24 dev enp2
 sudo ip netns exec loxilb ifconfig lo 127.0.0.1 up
-sudo ip netns exec client ip addr add 123.123.123.2/24 dev enp1
+sudo ip netns exec client ip addr add 1.1.1.2/24 dev enp1
 sudo ip netns exec client ifconfig lo 127.0.0.1 up
+sudo ip netns exec client route add -net 123.123.123.0 netmask 255.255.255.0 gw 1.1.1.254
 
 bridge_name=`brctl show | grep br- | awk '{ print $1 }'`
 brctl addif $bridge_name loxilb-in
