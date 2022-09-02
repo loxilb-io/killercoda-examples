@@ -3,7 +3,7 @@ LoxiLB has been installed like described [here](https://loxilb-io.github.io/loxi
 
 View the installed LoxiLB:
 ```
-docker exec -it loxilb loxicmd help
+docker exec -it llb1 loxicmd help
 ```
 
 ## Check Topology
@@ -12,9 +12,9 @@ docker exec -it loxilb loxicmd help
 Check researchable like this:
 
 ```
-ip netns exec loxilb ping 31.31.31.1 
-ip netns exec loxilb ping 32.32.32.1 
-ip netns exec loxilb ping 33.33.33.1 
-ip netns exec loxilb ping 10.10.10.1 
+ip netns exec llb1 ping 31.31.31.1 
+ip netns exec llb1 ping 32.32.32.1 
+ip netns exec llb1 ping 33.33.33.1 
+ip netns exec llb1 ping 10.10.10.1 
 ```
 
