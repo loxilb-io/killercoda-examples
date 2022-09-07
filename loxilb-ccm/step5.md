@@ -54,7 +54,7 @@ spec:
 EOF
 ```
 
-Deploy pod with following command:
+Deploy service with following command:
 
 ```
 kubectl apply -f loxi-service.yaml
