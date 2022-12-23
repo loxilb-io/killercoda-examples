@@ -27,7 +27,11 @@
     },
     "assets": {
       "host01": [
-        {"file": "server.go", "target": "~/", "chmod": "+rw"}
+        {"file": "common.sh", "target": "~/", "chmod": "+rw"},
+        {"file": "config.sh", "target": "~/", "chmod": "+rw"},
+        {"file": "lbconfig.sh", "target": "~/", "chmod": "+rw"},
+        {"file": "rmconfig.sh", "target": "~/", "chmod": "+rw"},
+        {"file": "validation.sh", "target": "~/", "chmod": "+rw"}
       ]   
     }
   },
