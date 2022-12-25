@@ -1,0 +1,45 @@
+{
+  "title": "LoxiLB IPv4 Basic UDP Load Balancing Test",
+  "description": "Learn How To test LoxiLB IPv4 Basic UDP Load Balancing Test",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground": "intro/foreground.sh",
+      "background": "intro/background.sh",
+      "verify": "intro/verify.sh"      
+    },
+    "steps": [
+      {
+        "title": "Let's check our topology first",
+        "text": "step1.md"
+      },
+      {
+        "title": "Configure LoxiLB Rules and Check configuration",
+        "text": "step2.md"
+      },
+      {
+        "title": "Validate LoxiLB Rules ",
+        "text": "step3.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {"file": "client", "target": "~/", "chmod": "+rwx"},
+        {"file": "cleint.c", "target": "~/", "chmod": "+rwx"},
+        {"file": "common.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "config.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "rmconfig.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "server", "target": "~/", "chmod": "+rwx"},
+        {"file": "server.go", "target": "~/", "chmod": "+rwx"},
+        {"file": "start.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "validation.sh", "target": "~/", "chmod": "+rwx"}
+      ]   
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}

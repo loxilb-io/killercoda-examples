@@ -10,16 +10,12 @@
     },
     "steps": [
       {
-        "title": "Let's check our topology first",
+        "title": "Let's check our topology and LoxiLB configuration first",
         "text": "step1.md"
       },
       {
         "title": "Configure LoxiLB Rules and Check configuration",
         "text": "step2.md"
-      },
-      {
-        "title": "Send traffics and check result",
-        "text": "step3.md"
       }
     ],
     "finish": {
@@ -27,11 +23,11 @@
     },
     "assets": {
       "host01": [
-        {"file": "common.sh", "target": "~/", "chmod": "+rw"},
-        {"file": "config.sh", "target": "~/", "chmod": "+rw"},
-        {"file": "lbconfig.sh", "target": "~/", "chmod": "+rw"},
-        {"file": "rmconfig.sh", "target": "~/", "chmod": "+rw"},
-        {"file": "validation.sh", "target": "~/", "chmod": "+rw"}
+        {"file": "common.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "config.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "lbconfig.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "rmconfig.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "validation.sh", "target": "~/", "chmod": "+rwx"}
       ]   
     }
   },
