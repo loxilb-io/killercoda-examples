@@ -1,5 +1,5 @@
 #!/bin/bash
-source ../common.sh
+source ./common.sh
 echo IPSEC-2
 $hexec rh1 node ./server1.js &
 $hexec rh2 node ./server2.js &

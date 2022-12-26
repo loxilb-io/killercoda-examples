@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ../common.sh
+source ./common.sh
 
 disconnect_docker_hosts lh1 llb1
 disconnect_docker_hosts lh2 llb1
