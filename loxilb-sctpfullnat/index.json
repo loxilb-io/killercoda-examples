@@ -1,0 +1,45 @@
+{
+  "title": "LoxiLB SCTP Load Balancing Test with Funll-NAT Mode",
+  "description": "Learn How To test LoxiLB SCTP Load Balancing Test with Funll-NAT Mode",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground": "intro/foreground.sh",
+      "background": "intro/background.sh",
+      "verify": "intro/verify.sh"      
+    },
+    "steps": [
+      {
+        "title": "Let's check our topology first",
+        "text": "step1.md"
+      },
+      {
+        "title": "Configure LoxiLB Rules and Check configuration",
+        "text": "step2.md"
+      },
+      {
+        "title": "Validate LoxiLB Rules ",
+        "text": "step3.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {"file": "sctp_client", "target": "~/", "chmod": "+rwx"},
+        {"file": "sctp_client.c", "target": "~/", "chmod": "+rwx"},
+        {"file": "common.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "config.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "rmconfig.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "sctp_server", "target": "~/", "chmod": "+rw"},
+        {"file": "sctp_server.c", "target": "~/", "chmod": "+rw"},
+        {"file": "start.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "validation.sh", "target": "~/", "chmod": "+rwx"}        
+      ]   
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
