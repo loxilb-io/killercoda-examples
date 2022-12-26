@@ -1,0 +1,44 @@
+{
+  "title": "LoxiLB TCP Load Balancing Test with IPSec",
+  "description": "Learn How To test LoxiLB TCP Load Balancing Test with IPSec",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground": "intro/foreground.sh",
+      "background": "intro/background.sh",
+      "verify": "intro/verify.sh"      
+    },
+    "steps": [
+      {
+        "title": "Let's check our topology first",
+        "text": "step1.md"
+      },
+      {
+        "title": "Configure LoxiLB Rules and Check configuration",
+        "text": "step2.md"
+      },
+      {
+        "title": "Validate LoxiLB Rules ",
+        "text": "step3.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {"file": "common.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "config.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "rmconfig.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "server1.js", "target": "~/", "chmod": "+rw"},
+        {"file": "server2.js", "target": "~/", "chmod": "+rw"},
+        {"file": "server3.js", "target": "~/", "chmod": "+rw"},        
+        {"file": "start.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "validation.sh", "target": "~/", "chmod": "+rwx"}        
+      ]   
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
