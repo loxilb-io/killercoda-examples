@@ -35,8 +35,8 @@
         {"file": "server3.js", "target": "~/", "chmod": "+rw"},        
         {"file": "start.sh", "target": "~/", "chmod": "+rwx"},
         {"file": "validation.sh", "target": "~/", "chmod": "+rwx"},
-        {"file": "llb1_ipsec_config/*.*", "target": "~/llb1_ipsec_config", "chmod": "+rwx"},
-        {"file": "llb2_ipsec_config/*.*", "target": "~/llb2_ipsec_config", "chmod": "+rwx"}
+        {"file": "llb1_ipsec_config/*.*", "target": "~/", "chmod": "+rwx"},
+        {"file": "llb2_ipsec_config/*.*", "target": "~/", "chmod": "+rwx"}
       ]   
     }
   },
