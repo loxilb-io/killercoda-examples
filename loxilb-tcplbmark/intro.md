@@ -6,6 +6,8 @@ On a serious note, we will look into how to use LoxiLB Marking feature to apply 
 
 `Marking` is meaning that LB can match some internal marking field to apply LB policy selectively. Normally LoxiLB can support ACL feature and push mark field action. You can check LoxiLB internal table architecture and order on https://github.com/loxilb-io/loxilbdocs/blob/main/docs/loxilbebpf.md
 
+With this, user can operate policy based load balancing. This policy can be any combination of 5 tuples.
+
 LoxiLB was built with this in mind and it in this tutorial you will learn:
 
 * How to configure **LoxiLB**: How to setup it and How to use loxi CLI.

@@ -1,9 +1,9 @@
 #!/bin/bash
 source ./common.sh
 echo SCENARIO-sctplb
-$hexec l3ep1 ./server server1 &
-$hexec l3ep2 ./server server2 &
-$hexec l3ep3 ./server server3 &
+$hexec l3ep1 ./sctp_server server1 &
+$hexec l3ep2 ./sctp_server server2 &
+$hexec l3ep3 ./sctp_server server3 &
 
 sleep 5
 code=0
@@ -13,7 +13,7 @@ j=0
 waitCount=0
 while [ $j -le 2 ]
 do
-    res=$($hexec l3h1 ./client ${ep[j]} 8080)
+    res=$($hexec l3h1 ./sctp_client ${ep[j]} 8080)
     #echo $res
     if [[ $res == "${servArr[j]}" ]]
     then
@@ -37,7 +37,7 @@ for i in {1..4}
 do
 for j in {0..2}
 do
-    res=$($hexec l3h1 ./client 20.20.20.1 2020)
+    res=$($hexec l3h1 timeout 10 ./sctp_client 20.20.20.1 2020)
     echo -e $res
     if [[ $res != "${servArr[j]}" ]]
     then
