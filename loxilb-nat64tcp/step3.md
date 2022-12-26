@@ -2,6 +2,14 @@
 
 Validate LoxiLB NAT64 LB Feature
 
+Exit from LoxiLB container first
+
+```
+root@0cb735c42e72:/# exit
+exit
+ubuntu $
+```
+
 ```
 cd ~/
 sudo /bin/bash ./validation.sh
