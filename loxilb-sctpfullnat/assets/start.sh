@@ -1,6 +1,6 @@
 #!/bin/bash
 
-source ../common.sh
+source ./common.sh
 
 echo "#########################################"
 echo "Spawning all hosts"

@@ -6,6 +6,8 @@ cd ~/
 sudo /bin/bash ./config.sh
 ```
 
+Need more time for lb end-point health check (Take almost 40 seconds)
+
 Summary `config.sh` file :
 ```
 docker exec -it llb1 bash
@@ -22,12 +24,12 @@ configuration
 
 Check LoxiLB One-ARM mode configuration :
 ```
-root@0cb735c42e72:/# loxicmd get lb -o wide
-| EXTERNAL IP | PORT | PROTOCOL | BLOCK | SELECT |  MODE   | ENDPOINT IP | TARGET PORT | WEIGHT | STATE  |
-|-------------|------|----------|-------|--------|---------|-------------|-------------|--------|--------|
-| 2001::1     | 2020 | tcp      |     0 | rr     | default | 31.31.31.1  |        8080 |      1 | active |
-|             |      |          |       |        |         | 32.32.32.1  |        8080 |      1 | active |
-|             |      |          |       |        |         | 33.33.33.1  |        8080 |      1 | active |
+root@10571b8b644a:/# loxicmd get lb -o wide
+| EXTERNAL IP | PORT | PROTOCOL | BLOCK | SELECT |  MODE  |  ENDPOINT IP  | TARGET PORT | WEIGHT | STATE  |
+|-------------|------|----------|-------|--------|--------|---------------|-------------|--------|--------|
+| 20.20.20.1  | 2020 | tcp      |     0 | rr     | onearm | 100.100.100.2 |        8080 |      1 | active |
+|             |      |          |       |        |        | 100.100.100.3 |        8080 |      1 | active |
+|             |      |          |       |        |        | 100.100.100.4 |        8080 |      1 | active |
 ```
 
 

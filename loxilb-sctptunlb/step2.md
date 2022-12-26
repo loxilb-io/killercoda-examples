@@ -22,11 +22,14 @@ configuration
 
 Check LoxiLB SCTP VxLAN Overlay configuration :
 ```
-root@0cb735c42e72:/# loxicmd get lb -o wide
+root@21a6f55a0509:/#  loxicmd get lb -o wide
 | EXTERNAL IP | PORT | PROTOCOL | BLOCK | SELECT |  MODE   | ENDPOINT IP | TARGET PORT | WEIGHT | STATE  |
 |-------------|------|----------|-------|--------|---------|-------------|-------------|--------|--------|
-| 2001::1     | 2020 | tcp      |     0 | rr     | default | 31.31.31.1  |        8080 |      1 | active |
-|             |      |          |       |        |         | 32.32.32.1  |        8080 |      1 | active |
-|             |      |          |       |        |         | 33.33.33.1  |        8080 |      1 | active |
+| 88.88.88.88 | 2020 | sctp     |     0 | rr     | default | 25.25.25.1  |        8080 |      1 | active |
+|             |      |          |       |        |         | 26.26.26.1  |        8080 |      1 | active |
+|             |      |          |       |        |         | 27.27.27.1  |        8080 |      1 | active |
+root@21a6f55a0509:/# loxicmd get port | grep vxlan
+|     9 | vxlan50   | fa:00:a3:6f:59:13 | true/true  | Routed: true IPv4 :            | IsPVID: true  |
 ```
+
 

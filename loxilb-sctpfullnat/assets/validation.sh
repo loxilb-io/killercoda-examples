@@ -1,5 +1,5 @@
 #!/bin/bash
-source ../common.sh
+source ./common.sh
 echo SCENARIO-SCTP-FULLNAT
 $hexec ep1 ./server server1 &
 $hexec ep2 ./server server2 &

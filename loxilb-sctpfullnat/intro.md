@@ -1,8 +1,8 @@
-#  Achieving LoxiLB SCTP Load Balancing Test with Funll-NAT Mode
+#  Achieving LoxiLB SCTP Load Balancing Test with Full-NAT Mode
 
 Welcome to the tutorial where you learn how to configure LoxiLB.
 
-On a serious note, we will look into how to use LoxiLB for SCTP test with Funll-NAT Mode. 
+On a serious note, we will look into how to use LoxiLB for SCTP test with Full-NAT Mode. 
 
 Stream Control Transmission Protocol (SCTP) is a connection-oriented network protocol for transmitting multiple streams of data simultaneously between two endpoints that have established a connection in a computer network.
 
