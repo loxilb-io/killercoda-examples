@@ -14,11 +14,10 @@ root@8b74b5ddc4d2:/# llb1 loxicmd create lb 20.20.20.1 --select=priority --tcp=2
 
 This command will configure LB policy with WRR algorithm. `--endpoints=31.31.31.1:40,32.32.32.1:40,33.33.33.1:20` defines endpoint's WRR value(40 / 40 / 20). LoxiLB will distribute flow table resources according to these WRR values.
 
-LoxiLB'S WRR is operationg as like following diagram:
+LoxiLB'S WRR is operating as like following diagram:
 
 ![configuration](./assets/configuration.png)
 
-configuration
 
 Check LoxiLB WRR configuration :
 ```

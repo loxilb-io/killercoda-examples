@@ -15,11 +15,10 @@ root@8b74b5ddc4d2:/# loxicmd create lb  2001::1 --tcp=2020:8080 --endpoints=4ffe
 
 This command will configure LB policy to connection IPv6 client with `2001:11` VIP and `4ffe:11, 5ffe::1, 6ffe::1` IPv6 endpoints.
 
-LoxiLB'S NAT66 is operationg as like following diagram:
+LoxiLB'S NAT66 is operating as like following diagram:
 
 ![configuration](./assets/configuration.png)
 
-configuration
 
 Check LoxiLB NAT66 configuration :
 ```

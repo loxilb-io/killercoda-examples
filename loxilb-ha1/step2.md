@@ -20,11 +20,10 @@ root@8b74b5ddc4d3:/# exit
 
 This command will configure LB policy to connection TCP client with `20.20.20.1` VIP and `11.11.11.3, 11.11.11.4, 11.11.11.3,` IPv4 endpoints with Full-NAT Mode per each LoxiLB nodes.
 
-LoxiLB'S TCP Full-NAT HA mode is operationg as like following diagram:
+LoxiLB'S TCP Full-NAT HA mode is operating as like following diagram:
 
 ![configuration](./assets/configuration.png)
 
-configuration
 
 Check LoxiLB TCP Full-NAT mode with HA configuration :
 ```

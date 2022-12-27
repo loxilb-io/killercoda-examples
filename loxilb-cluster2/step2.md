@@ -20,11 +20,10 @@ root@8b74b5ddc4d3:/# exit
 
 This command will configure LB policy to connection TCP client with `20.20.20.1` VIP and `10.10.10.3, 10.10.10.4, 10.10.10.5` IPv4 endpoints with One-ARM Mode per each LoxiLB nodes.
 
-LoxiLB'S TCP One-ARM HA mode is operationg as like following diagram:
+LoxiLB'S TCP One-ARM HA mode is operating as like following diagram:
 
 ![configuration](./assets/configuration.png)
 
-configuration
 
 Check LoxiLB TCP One-ARM mode with HA configuration :
 ```

@@ -16,11 +16,10 @@ root@8b74b5ddc4d2:/# llb1 loxicmd create lb 20.20.20.1 --tcp=2020:8080 --endpoin
 
 This command will configure LB policy with basic TCP LB rule. 
 
-LoxiLB'S One-ARM mode is operationg as like following diagram:
+LoxiLB'S One-ARM mode is operating as like following diagram:
 
 ![configuration](./assets/configuration.png)
 
-configuration
 
 Check LoxiLB One-ARM mode configuration :
 ```

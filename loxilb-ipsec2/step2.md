@@ -14,11 +14,10 @@ root@8b74b5ddc4d2:/# loxicmd create lb 20.20.20.1 --tcp=2020:8080 --endpoints=25
 
 This command will configure LB policy to connection TCP client with `20.20.20.1` VIP and `25.25.25.1, 26.26.26.1` IPv4 TCP endpoints over IPSec tunnel.
 
-LoxiLB'S LB over IPSec mode is operationg as like following diagram:
+LoxiLB'S LB over IPSec mode is operating as like following diagram:
 
 ![configuration](./assets/configuration.png)
 
-configuration
 
 Check LoxiLB IPSec mode configuration :
 ```

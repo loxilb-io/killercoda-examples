@@ -17,7 +17,7 @@ This command will configure LB policy with specific internal mark feild. `--mark
 
 In validation step, you will dynamically update mark policy and check operation.
 
-LoxiLB'S MARK is operationg as like following diagram:
+LoxiLB'S MARK is operating as like following diagram:
 
 ![configuration](./assets/configuration.png)
 

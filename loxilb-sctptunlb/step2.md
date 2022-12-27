@@ -14,11 +14,10 @@ root@8b74b5ddc4d2:/# loxicmd create lb 88.88.88.88 --sctp=2020:8080 --endpoints=
 
 This command will configure LB policy to connection SCTP client with `88.88.88.88` VIP and `25.25.25.1, 26.26.26.1, 27.27.27.1` IPv4 STCP endpoints with VxLAN Overlay
 
-LoxiLB'S SCTP VxLAN Overlay is operationg as like following diagram:
+LoxiLB'S SCTP VxLAN Overlay is operating as like following diagram:
 
 ![configuration](./assets/configuration.png)
 
-configuration
 
 Check LoxiLB SCTP VxLAN Overlay configuration :
 ```

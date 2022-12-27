@@ -14,11 +14,10 @@ root@8b74b5ddc4d2:/# llb1 loxicmd create lb 20.20.20.1 --sctp=38412:38412 --endp
 
 This command will configure LB policy to connection SCTP client with `20.20.20.1` VIP and `10.0.3.10, 10.0.3.11` IPv4 STCP endpoints with Full-NAT Mode
 
-LoxiLB'S SCTP Full-NAT mode is operationg as like following diagram:
+LoxiLB'S SCTP Full-NAT mode is operating as like following diagram:
 
 ![configuration](./assets/configuration.png)
 
-configuration
 
 Check LoxiLB SCTP Full-NAT mode configuration :
 ```

@@ -16,11 +16,10 @@ This command will configure LB policy with basic TCP LB DSR Mode rule.
 
 This command will configure LB policy with `--mode=dsr`. You can define DSR mode with `--mode=dsr` value.
 
-LoxiLB'S DSR is operationg as like following diagram:
+LoxiLB'S DSR is operating as like following diagram:
 
 ![configuration](./assets/configuration.png)
 
-configuration
 
 Check LoxiLB DSR configuration :
 ```
