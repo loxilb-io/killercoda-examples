@@ -6,12 +6,12 @@ echo "#########################################"
 echo "Spawning all hosts"
 echo "#########################################"
 
-spawn_docker_host --dock-type loxilb --dock-name llb1 --with-bgp yes --bgp-config $(pwd)/llb1_gobgp_config --with-ka yes --ka-config $(pwd)/keepalived_config
-spawn_docker_host --dock-type loxilb --dock-name llb2 --with-bgp yes --bgp-config $(pwd)/llb2_gobgp_config --with-ka yes --ka-config $(pwd)/keepalived_config
+spawn_docker_host --dock-type loxilb --dock-name llb1 --with-bgp yes --bgp-config /root/llb1_gobgp_config --with-ka yes --ka-config /root/keepalived_config
+spawn_docker_host --dock-type loxilb --dock-name llb2 --with-bgp yes --bgp-config /root/llb2_gobgp_config --with-ka yes --ka-config /root/keepalived_config
 spawn_docker_host --dock-type host --dock-name ep1
 spawn_docker_host --dock-type host --dock-name ep2
 spawn_docker_host --dock-type host --dock-name ep3
-spawn_docker_host --dock-type host --dock-name r1 --with-bgp yes --bgp-config $(pwd)/quagga_config
+spawn_docker_host --dock-type host --dock-name r1 --with-bgp yes --bgp-config /root/quagga_config
 spawn_docker_host --dock-type host --dock-name r2
 spawn_docker_host --dock-type host --dock-name user
 

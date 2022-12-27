@@ -11,9 +11,9 @@ llbInIp["llb2"]="10.10.10.2"
 
 ep=( "10.10.10.3" "10.10.10.4" "10.10.10.5" )
 function tcp_validate() {
-  $hexec ep1 node ../common/tcp_server.js server1 &
-  $hexec ep2 node ../common/tcp_server.js server2 &
-  $hexec ep3 node ../common/tcp_server.js server3 &
+  $hexec ep1 node ./tcp_server.js server1 &
+  $hexec ep2 node ./tcp_server.js server2 &
+  $hexec ep3 node ./tcp_server.js server3 &
 
   sleep 20
 
