@@ -5,6 +5,23 @@ Validate LoxiLB UDP
 ```
 cd ~/
 sudo /bin/bash ./validation.sh
+SCENARIO-udplb
+server1 UP
+server2 UP
+server3 UP
+server1
+server2
+server3
+server1
+server2
+server3
+server1
+server2
+server3
+server1
+server2
+server3
+SCENARIO-udplb [OK]
 ```
 
 Summary `validation.sh` file :
