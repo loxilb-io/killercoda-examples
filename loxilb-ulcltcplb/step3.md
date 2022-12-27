@@ -1,6 +1,6 @@
 
 
-Validate LoxiLB SCTP Over Vxlay LB Feature
+Validate LoxiLB TCP Over GTP-U Feature
 
 ```
 cd ~/

@@ -1,6 +1,6 @@
 {
-  "title": "LoxiLB Load Balancing Test over Clustering with BGP and HA(High Availability)",
-  "description": "Learn How To test LoxiLB TCP Load Balancing Test over Clustering with BGP and HA(High Availability)",
+  "title": "LoxiLB Load Balancing Test over Clustering with BGP and HA (Full NAT Mode)",
+  "description": "Learn How To test LoxiLB TCP Load Balancing Test over Clustering with BGP and HA (Full NAT Mode)",
   "details": {
     "intro": {
       "text": "intro.md",

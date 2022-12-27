@@ -1,4 +1,4 @@
-#  Achieving LoxiLB Load Balancing Test over Clustering with BGP and HA (One ARM Mode)
+#  Achieving LoxiLB Load Balancing Test over Clustering with BGP and HA (FULL NAT Mode)
 
 Welcome to the tutorial where you learn how to configure LoxiLB.
 

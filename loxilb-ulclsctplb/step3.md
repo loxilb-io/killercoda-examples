@@ -1,11 +1,11 @@
 
 
-Validate LoxiLB SCTP Over Vxlay LB Feature
+Validate LoxiLB SCTP Over GTP-U LB Feature
 
 ```
 cd ~/
 sudo /bin/bash ./validation.sh
-SCENARIO-ulcltcplb
+SCENARIO-ulclsctplb
 server1 UP
 server2 UP
 server3 UP
@@ -21,7 +21,7 @@ server3
 server1
 server2
 server3
-SCENARIO-ulcltcplb [OK]
+SCENARIO-ulclsctplb [OK]
 ```
 
 Summary `validation.sh` file :
