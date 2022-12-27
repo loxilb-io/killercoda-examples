@@ -57,5 +57,15 @@ root@8b74b5ddc4d3:/# loxicmd get lb -o wide
 | 88.88.88.88 | 2020 | tcp      |     0 | rr     | default | 25.25.25.1  |        8080 |      1 | active |
 |             |      |          |       |        |         | 26.26.26.1  |        8080 |      1 | active |
 |             |      |          |       |        |         | 27.27.27.1  |        8080 |      1 | active |
+root@8b74b5ddc4d3:/# loxicmd get session -o wide
+| IDENT | SESSION IP |     ACCESS NETWORK TUNNEL     |      CORE NETWORK TUNNEL      |
+|-------|------------|-------------------------------|-------------------------------|
+| user1 | 32.32.32.1 | TeID: 1 TunnelIP: 10.10.10.59 | TeID: 1 TunnelIP: 10.10.10.56 |
+| user2 | 31.31.31.1 | TeID: 2 TunnelIP: 10.10.10.59 | TeID: 2 TunnelIP: 10.10.10.56 |
+root@8b74b5ddc4d3:/# loxicmd get sessionulcl -o wide
+| IDENT |   ULCL IP   | QFI |
+|-------|-------------|-----|
+| user1 | 88.88.88.88 |  11 |
+| user2 | 88.88.88.88 |  12 |
 ```
 
