@@ -1,10 +1,27 @@
 
 
-Validate LoxiLB NAT64 LB Feature
+Validate LoxiLB SCTP Full-NAT LB Feature
 
 ```
 cd ~/
 sudo /bin/bash ./validation.sh
+SCENARIO-sctplb
+server1 UP
+server2 UP
+server3 UP
+server1
+server2
+server3
+server1
+server2
+server3
+server1
+server2
+server3
+server1
+server2
+server3
+SCENARIO-sctplb [OK]
 ```
 
 Summary `validation.sh` file :

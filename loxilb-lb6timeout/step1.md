@@ -24,8 +24,8 @@ ip netns exec llb1 route -n
 Check researchable like this:
 
 ```
-ip netns exec llb1 ping 31.31.31.1 
-ip netns exec llb1 ping 32.32.32.1 
-ip netns exec llb1 ping 33.33.33.1 
-ip netns exec llb1 ping 10.10.10.1 
+ip netns exec llb1 ping6 3ffe::1 -c 3
+ip netns exec llb1 ping6 4ffe::1 -c 3
+ip netns exec llb1 ping6 5ffe::1 -c 3
+ip netns exec llb1 ping6 6ffe::1 -c 3
 ```

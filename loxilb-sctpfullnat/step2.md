@@ -22,10 +22,9 @@ LoxiLB'S SCTP Full-NAT mode is operating as like following diagram:
 Check LoxiLB SCTP Full-NAT mode configuration :
 ```
 root@0cb735c42e72:/# loxicmd get lb -o wide
-| EXTERNAL IP | PORT | PROTOCOL | BLOCK | SELECT |  MODE   | ENDPOINT IP | TARGET PORT | WEIGHT | STATE  |
-|-------------|------|----------|-------|--------|---------|-------------|-------------|--------|--------|
-| 2001::1     | 2020 | tcp      |     0 | rr     | default | 31.31.31.1  |        8080 |      1 | active |
-|             |      |          |       |        |         | 32.32.32.1  |        8080 |      1 | active |
-|             |      |          |       |        |         | 33.33.33.1  |        8080 |      1 | active |
+| EXTERNAL IP | PORT  | PROTOCOL | BLOCK | SELECT |  MODE   | ENDPOINT IP | TARGET PORT | WEIGHT | STATE  |
+|-------------|-------|----------|-------|--------|---------|-------------|-------------|--------|--------|
+| 20.20.20.1  | 38412 | sctp     |     0 | rr     | fullnat | 10.0.3.10   |       38412 |      1 | active |
+|             |       |          |       |        |         | 10.0.3.11   |       38412 |      1 | active |
 ```
 

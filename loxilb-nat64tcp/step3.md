@@ -13,6 +13,23 @@ ubuntu $
 ```
 cd ~/
 sudo /bin/bash ./validation.sh
+SCENARIO nat64tcp
+server1 UP
+server2 UP
+server3 UP
+server1
+server2
+server3
+server1
+server2
+server3
+server1
+server2
+server3
+server1
+server2
+server3
+nat64tcp [OK]
 ```
 
 Summary `validation.sh` file :

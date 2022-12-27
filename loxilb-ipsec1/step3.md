@@ -1,13 +1,21 @@
 
 
-Validate LoxiLB NAT64 LB Feature
+Validate LoxiLB LB Over IPSec for VPN Feature
 
 ```
 cd ~/
 sudo /bin/bash ./validation.sh
+IPSEC-1
+Ping lh1                ->       server1                        : [OK]
+Ping lh1                ->       server2                        : [OK]
+Ping lh2                ->       server1                        : [OK]
+Ping lh2                ->       server2                        : [OK]
+IPSec Tunnel Traffic [OK]
+server1 UP
+server2 UP
+IPSEC-1 [OK]
 ```
 
 Summary `validation.sh` file :
 
-It will use simpleCTP Server program using Linux `IPPROTO_CTP`. In initial time, it will make sctp(8080 port) sessions with servers(25.25.25.1, 26.26.26.1). And check that IPv4 SCTP clients can access to IPv4 SCTP endpoints with load balancing.
 

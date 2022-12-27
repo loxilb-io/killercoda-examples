@@ -29,6 +29,9 @@
       "host01": [
         {"file": "common.sh", "target": "~/", "chmod": "+rwx"},
         {"file": "config.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "server1.js", "target": "~/", "chmod": "+rwx"},
+        {"file": "server2.js", "target": "~/", "chmod": "+rwx"},
+        {"file": "server3.js", "target": "~/", "chmod": "+rwx"},
         {"file": "rmconfig.sh", "target": "~/", "chmod": "+rwx"},
         {"file": "start.sh", "target": "~/", "chmod": "+rwx"},
         {"file": "validation.sh", "target": "~/", "chmod": "+rwx"}

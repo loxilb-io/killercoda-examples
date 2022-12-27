@@ -4,7 +4,16 @@ Validate LoxiLB Timeout Feature
 
 ```
 cd ~/
-sudo /bin/bash ./validation.sh
+sudo /bin/bash ./validation.sh\
+LB-TIMEOUT
+server1 UP
+server2 UP
+server3 UP
+nc is UP
+LB-TIMEOUT [OK]
+./validation.sh: line 65: 24312 Killed                  $hexec l3ep1 iperf -s -p 8080 >> /dev/null 2>&1
+./validation.sh: line 65: 24313 Killed                  $hexec l3ep2 iperf -s -p 8080 >> /dev/null 2>&1
+./validation.sh: line 65: 24314 Killed                  $hexec l3ep3 iperf -s -p 8080 >> /dev/null 2>&1
 ```
 
 Summary `validation.sh` file :

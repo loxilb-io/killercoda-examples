@@ -1,10 +1,27 @@
 
 
-Validate LoxiLB Timeout Feature
+Validate LoxiLB L2 One-ARM Mode Feature
 
 ```
 cd ~/
 sudo /bin/bash ./validation.sh
+ONEARM-L2
+server1 UP
+server2 UP
+server3 UP
+server1
+server2
+server3
+server1
+server2
+server3
+server1
+server2
+server3
+server1
+server2
+server3
+ONEARM-L2 [OK]
 ```
 
 Summary `validation.sh` file :

@@ -5,6 +5,23 @@ Validate LoxiLB SCTP Over Vxlay LB Feature
 ```
 cd ~/
 sudo /bin/bash ./validation.sh
+SCENARIO-sctptunlb
+server1 UP
+server2 UP
+server3 UP
+server1
+server2
+server3
+server1
+server2
+server3
+server1
+server2
+server3
+server1
+server2
+server3
+SCENARIO-sctptunlb [OK]
 ```
 
 Summary `validation.sh` file :

@@ -51,26 +51,6 @@ fi
 
 sleep 1
 
-
-$dexec llb1 loxicmd create firewall --firewallRule="sourceIP:10.10.10.1/32,preference:200" --allow --setmark=20
-
-for j in {0..2}
-do
-    res=$($hexec l3h1 socat -T10 - TCP:20.20.20.1:2020)
-    echo $res
-    if [[ $res != "${servArr[j]}" ]]
-    then
-        code=1
-    fi
-    sleep 1
-done
-if [[ $code == 1 ]]
-then
-    echo SCENARIO-drop-tcplbmark [OK]
-else
-    echo SCENARIO-drop-tcplbmark [FAILED]
-fi
-
 $hexec l3ep1 killall  -9 socat > /dev/null 2>&1
 $hexec l3ep2 killall  -9 socat > /dev/null 2>&1
 $hexec l3ep3 killall  -9 socat > /dev/null 2>&1
