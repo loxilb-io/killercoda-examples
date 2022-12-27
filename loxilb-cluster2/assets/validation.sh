@@ -91,9 +91,9 @@ function tcp_validate() {
 }
 
 function sctp_validate() {
-  $hexec ep1 ../common/sctp_server server1 &
-  $hexec ep2 ../common/sctp_server server2 &
-  $hexec ep3 ../common/sctp_server server3 &
+  $hexec ep1 ./sctp_server server1 &
+  $hexec ep2 ./sctp_server server2 &
+  $hexec ep3 ./sctp_server server3 &
 
   sleep 20
 
