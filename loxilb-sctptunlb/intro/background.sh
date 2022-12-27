@@ -3,7 +3,7 @@ echo starting... # to test stdout output in /var/log/killercoda
 
 echo '============= Install LoxiLB and provision topollogy ============'
 echo '============= Make 3 Endpoints, 1 Client and 1 LoxiLB ============'
-apt install -y net-tools socat iperf nodejs netcat libsctp-dev
+apt install -y net-tools socat iperf nodejs netcat libsctp-dev jq
 sleep 3
 
 cd ~/
