@@ -1,0 +1,51 @@
+{
+  "title": "LoxiLB Load Balancing Test over Clustering with BGP and HA(High Availability)",
+  "description": "Learn How To test LoxiLB TCP Load Balancing Test over Clustering with BGP and HA(High Availability)",
+  "details": {
+    "intro": {
+      "text": "intro.md",
+      "foreground": "intro/foreground.sh",
+      "background": "intro/background.sh",
+      "verify": "intro/verify.sh"      
+    },
+    "steps": [
+      {
+        "title": "Let's check our topology first",
+        "text": "step1.md"
+      },
+      {
+        "title": "Configure LoxiLB Rules and Check configuration",
+        "text": "step2.md"
+      },
+      {
+        "title": "Validate LoxiLB Rules ",
+        "text": "step3.md"
+      }
+    ],
+    "finish": {
+      "text": "finish.md"
+    },
+    "assets": {
+      "host01": [
+        {"file": "common.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "config.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "rmconfig.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "sctp_client", "target": "~/", "chmod": "+rww"},
+        {"file": "sctp_client.c", "target": "~/", "chmod": "+rww"},
+        {"file": "sctp_server", "target": "~/", "chmod": "+rww"},
+        {"file": "sctp_server.c", "target": "~/", "chmod": "+rww"},
+        {"file": "tcp_server.js", "target": "~/", "chmod": "+rww"},
+        {"file": "try.sh", "target": "~/", "chmod": "+rww"},
+        {"file": "keepalived_config/*.*", "target": "~/", "chmod": "644"},
+        {"file": "llb1_gobgp_config/*.*", "target": "~/", "chmod": "644"},
+        {"file": "llb2_gobgp_config/*.*", "target": "~/", "chmod": "644"},        
+        {"file": "quagga_config/*.*", "target": "~/", "chmod": "644"},
+        {"file": "start.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "validation.sh", "target": "~/", "chmod": "+rwx"}        
+      ]   
+    }
+  },
+  "backend": {
+    "imageid": "ubuntu"
+  }
+}
