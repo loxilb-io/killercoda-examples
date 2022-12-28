@@ -28,7 +28,7 @@
     "assets": {
       "host01": [
         {"file": "common.sh", "target": "~/", "chmod": "+rwx"},
-        {"file": "common-mirror.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "config-mirror.sh", "target": "~/", "chmod": "+rwx"},
         {"file": "config.sh", "target": "~/", "chmod": "+rwx"},
         {"file": "rmconfig.sh", "target": "~/", "chmod": "+rwx"},
         {"file": "rmconfig.sh-mirror.sh", "target": "~/", "chmod": "+rwx"},
