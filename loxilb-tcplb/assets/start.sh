@@ -12,7 +12,7 @@ spawn_docker_host --dock-type host --dock-name l3ep1
 spawn_docker_host --dock-type host --dock-name l3ep2
 spawn_docker_host --dock-type host --dock-name l3ep3
 
-spawn_docker_host --dock-type host --dock-name br1
+spawn_docker_host --dock-type wireshark --dock-name wireshark
 
 echo "#########################################"
 echo "Connecting and configuring  hosts"
@@ -24,7 +24,7 @@ connect_docker_hosts l3ep1 llb1
 connect_docker_hosts l3ep2 llb1
 connect_docker_hosts l3ep3 llb1
 
-connect_docker_hosts llb1 br1
+connect_docker_hosts llb1 wireshark
 
 sleep 5
 
@@ -38,7 +38,7 @@ config_docker_host --host1 llb1 --host2 l3ep1 --ptype phy --addr 31.31.31.254/24
 config_docker_host --host1 llb1 --host2 l3ep2 --ptype phy --addr 32.32.32.254/24
 config_docker_host --host1 llb1 --host2 l3ep3 --ptype phy --addr 33.33.33.254/24
 
-create_docker_host_cnbridge --host1 br1 --host2 llb1
+create_docker_host_cnbridge --host1 wireshark --host2 llb1
 
 sleep 5
 
