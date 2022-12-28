@@ -6,4 +6,4 @@ echo "#########################################"
 echo "Delete LoxiLB Mirror with Name"
 echo "#########################################"
 
-$dexec llb1 loxicmd delete mirror mirr-$1
+$dexec llb2 loxicmd delete mirror mirr-$1

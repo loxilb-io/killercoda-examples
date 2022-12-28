@@ -28,6 +28,12 @@ Summary `validation.sh` file :
 
 In initial time, it will make http(8080 port) sessions with servers(31.31.31.1, 32.32.32.1, 33.33.33.1).
 
+(0) Create Mirror Linkbw LoxiLB and Wireshark node
+```
+source ./common.sh
+connect_docker_hosts_default_ns llb1 wireshark
+```
+
 (1) Create Mirror Object for analytics
 
 LoxiLB can support mirror for analytics. 
@@ -49,8 +55,3 @@ Access Wireshark for Analytics [ACCESS WIRESHARK]({{TRAFFIC_HOST1_3000}}) and se
 ```
 
 `1` is unique id which is created before.
-
-
-
-
-

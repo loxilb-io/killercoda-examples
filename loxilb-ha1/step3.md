@@ -44,3 +44,31 @@ server2
 server3
 HA-1 [OK]
 ```
+
+(0) Create Mirror Linkbw LoxiLB and Wireshark node
+```
+source ./common.sh
+connect_docker_hosts_default_ns llb1 wireshark
+```
+
+(1) Create Mirror Object for analytics
+
+LoxiLB can support mirror for analytics. 
+
+Mirroring Configuration sending from `ellb1r1`(link bw llb1 <--> switch) to `ellb1wireshark`(llb1 <--> link bw wireshark node )
+
+```
+./config-mirror.sh 1 ellb1r1 ellb1wireshark
+```
+
+`1` is unique id for mirror object.
+
+Access Wireshark for Analytics [ACCESS WIRESHARK]({{TRAFFIC_HOST1_3000}}) and select ewiresharkllb1 as capturing port.
+
+(2) Delete Mirror Object
+
+```
+./rmconfig-mirror.sh 1 
+```
+
+`1` is unique id which is created before.

@@ -1,40 +1,36 @@
 
 
-Validate LoxiLB monitoring Feature
 
+(0) Create Mirror Linkbw LoxiLB and Wireshark node
 ```
-cd ~/
-sudo /bin/bash ./validation.sh
-SCENARIO-tcplbmon
-server1 UP
-server2 UP
-server3 UP
-server1
-server2
-server3
-server1
-server2
-server3
-server1
-server2
-server3
-server1
-server2
-server3
-SCENARIO-tcplbmon p1 [OK]
-
-server2
-server3
-server2
-server3
-server2
-SCENARIO-tcplbmon [OK]
-./validation.sh: line 78: 24244 Killed                  $hexec l3ep1 node ./server1.js
-./validation.sh: line 78: 24245 Killed                  $hexec l3ep2 node ./server2.js
-./validation.sh: line 78: 24246 Killed                  $hexec l3ep3 node ./server3.js
+source ./common.sh
+connect_docker_hosts_default_ns llb1 wireshark
 ```
 
-Summary `validation.sh` file :
+(1) Create Mirror Object for analytics
 
-In initial time, it will make http(8080 port) sessions with servers(31.31.31.1) and monitoring enable. In second configuration, it will down one endpoint and check how to update automatically.
+LoxiLB can support mirror for analytics. 
+
+Mirroring Configuration sending from `ellb1l3ep1`(link bw llb1 <--> l3ep1) to `ellb1wireshark`(llb1 <--> link bw wireshark node ), `ellb1l3ep2`(link bw llb1 <--> l3ep2) to `ellb1wireshark`(llb1 <--> link bw wireshark node ) and `ellb1l3ep3`(link bw llb1 <--> l3ep3) to `ellb1wireshark`(llb1 <--> link bw wireshark node )
+
+```
+./config-mirror.sh 1 ellb1l3ep1 ellb1wireshark
+./config-mirror.sh 2 ellb1l3ep2 ellb1wireshark
+./config-mirror.sh 3 ellb1l3ep3 ellb1wireshark
+```
+
+`1` is unique id for mirror object.
+
+Access Wireshark for Analytics [ACCESS WIRESHARK]({{TRAFFIC_HOST1_3000}}) and select ewiresharkllb1 as capturing port.
+
+(2) Delete Mirror Object
+
+```
+./rmconfig-mirror.sh 1 
+./rmconfig-mirror.sh 2 
+./rmconfig-mirror.sh 3 
+```
+
+`1` is unique id which is created before.
+
 
