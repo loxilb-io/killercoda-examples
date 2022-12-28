@@ -41,7 +41,11 @@ Mirroring Configuration sending from `ellb1br1`(link bw llb1 <--> br1) to `ellb1
 
 `1` is unique id for mirror object.
 
-Access Wireshark for Analytics [ACCESS WIRESHARK]({{TRAFFIC_HOST1_3000}}) and select ewiresharkllb1 as capturing port.
+Access Wireshark for Analytics [ACCESS WIRESHARK]({{TRAFFIC_HOST1_3000}}) and select `ewiresharkllb1` as capturing port.
+
+You can check as like following figure:
+
+![diagram](./assets/ws.png)
 
 (2) Delete Mirror Object
 
