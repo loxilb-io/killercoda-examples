@@ -108,10 +108,7 @@ spawn_docker_host() {
       docker run -u root --cap-add SYS_ADMIN  --restart unless-stopped --privileged -dit $bgp_conf --name $dname ewindisch/quagga
     else
       docker run -u root --cap-add SYS_ADMIN -dit --name $dname eyes852/ubuntu-iperf-test:0.5
-    fi
-  elif [[ "$dtype" == "wireshark" ]]; then    
-      docker run -d --name=wireshark --cap-add=NET_ADMIN --security-opt seccomp=unconfined -e PUID=1000 -e PGID=1000 -e TZ=Europe/London -p 3000:3000 --restart unless-stopped lscr.io/linuxserver/wireshark:latest
-    fi
+    fi  
   fi
 
   pid=""
