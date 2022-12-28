@@ -163,6 +163,19 @@ connect_docker_hosts() {
   sudo ip -n $2 link set $link2 mtu 9000 up
 }
 
+## Connects two docker hosts(one is on namespace and the other is host)
+## arg1 - hostname1 (namespace)
+## arg2 - hostname2 (host)
+connect_docker_hosts_default_ns() {
+  link1=e$1$2
+  link2=e$2$1
+  #echo $link1 $link2
+  sudo ip link add $link1 type veth peer name $link2
+  sudo ip link set dev $link1 netns $1
+  sudo ip -n $1 link set $link1 mtu 9000 up
+  sudo ip link set $link2 mtu 9000 up
+}
+
 ## arg1 - hostname1 
 ## arg2 - hostname2 
 disconnect_docker_hosts() {

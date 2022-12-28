@@ -12,6 +12,21 @@ spawn_docker_host --dock-type host --dock-name l3ep1
 spawn_docker_host --dock-type host --dock-name l3ep2
 spawn_docker_host --dock-type host --dock-name l3ep3
 
+echo "#########################################"
+echo "Spawning Wireshark Node for Analytics"
+echo "#########################################"
+docker run -d \
+  --name=wireshark \
+  --net=host \
+  --cap-add=NET_ADMIN \
+  --security-opt seccomp=unconfined `#optional` \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e TZ=Europe/London \
+  -p 3000:3000 `#optional` \
+  --restart unless-stopped \
+  lscr.io/linuxserver/wireshark:latest
+
 # spawn_docker_host --dock-type wireshark --dock-name wireshark
 
 echo "#########################################"
@@ -24,7 +39,7 @@ connect_docker_hosts l3ep1 llb1
 connect_docker_hosts l3ep2 llb1
 connect_docker_hosts l3ep3 llb1
 
-# connect_docker_hosts llb1 wireshark
+connect_docker_hosts_default_ns llb1 wireshark
 
 sleep 5
 
