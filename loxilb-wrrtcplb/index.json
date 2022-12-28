@@ -34,6 +34,8 @@
         {"file": "server2.js", "target": "~/", "chmod": "+rw"},
         {"file": "server3.js", "target": "~/", "chmod": "+rw"},
         {"file": "start.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "config-mirror.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "rmconfig-mirror.sh", "target": "~/", "chmod": "+rwx"},
         {"file": "validation.sh", "target": "~/", "chmod": "+rwx"}
       ]   
     }

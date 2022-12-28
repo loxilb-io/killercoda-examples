@@ -35,6 +35,8 @@
         {"file": "server", "target": "~/", "chmod": "+rwx"},
         {"file": "server.go", "target": "~/", "chmod": "+rwx"},
         {"file": "start.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "config-mirror.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "rmconfig-mirror.sh", "target": "~/", "chmod": "+rwx"},
         {"file": "validation.sh", "target": "~/", "chmod": "+rwx"}
       ]   
     }

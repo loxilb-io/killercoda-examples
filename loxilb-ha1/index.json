@@ -36,6 +36,8 @@
         {"file": "server3.js", "target": "~/", "chmod": "+rw"},
         {"file": "keepalived_config/*.*", "target": "~/", "chmod": "644"},
         {"file": "start.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "config-mirror.sh", "target": "~/", "chmod": "+rwx"},
+        {"file": "rmconfig-mirror.sh", "target": "~/", "chmod": "+rwx"},
         {"file": "validation.sh", "target": "~/", "chmod": "+rwx"}        
       ]   
     }
