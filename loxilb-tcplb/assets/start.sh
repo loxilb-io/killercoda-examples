@@ -39,8 +39,6 @@ connect_docker_hosts l3ep1 llb1
 connect_docker_hosts l3ep2 llb1
 connect_docker_hosts l3ep3 llb1
 
-connect_docker_hosts_default_ns llb1 wireshark
-
 sleep 5
 
 #L3 config

@@ -8,7 +8,7 @@ NAT64 LB test mean that IPv6 VIP connects to IPv4 Endpoints with load balancing 
 
 LoxiLB was built with this in mind and it in this tutorial you will learn:
 
-* How to configure **LoxiLB**: How to setup it and How to use loxi CLI.
+* How to configure **LoxiLB**
 * How to do a troubleshoot.
 * How to test performance.
 

@@ -8,7 +8,7 @@ In One-ARM deployment, the load balancer is not physically in line of the traffi
 
 LoxiLB was built with this in mind and it in this tutorial you will learn:
 
-* How to configure **LoxiLB**: How to setup it and How to use loxi CLI.
+* How to configure **LoxiLB**
 * How to do a troubleshoot.
 * How to test performance.
 

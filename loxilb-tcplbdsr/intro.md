@@ -18,7 +18,7 @@ While DSR will improve your application’s network performance, there are a cou
 
 LoxiLB was built with this in mind and it in this tutorial you will learn:
 
-* How to configure **LoxiLB**: How to setup it and How to use loxi CLI.
+* How to configure **LoxiLB**
 * How to do a troubleshoot.
 * How to test performance.
 
