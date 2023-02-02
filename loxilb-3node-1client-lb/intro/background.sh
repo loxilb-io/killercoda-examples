@@ -2,8 +2,8 @@ set -x # to test stderr output in /var/log/killercoda
 echo starting... # to test stdout output in /var/log/killercoda
 
 echo '============= Install LoxiLB Docker ============'
-docker pull ghcr.io/loxilb-io/loxilb:latest
-docker run -u root --cap-add SYS_ADMIN   --restart unless-stopped --privileged -dit -v /dev/log:/dev/log --name loxilb ghcr.io/loxilb-io/loxilb:latest
+docker pull ghcr.io/loxilb-io/loxilb:v0.8.1
+docker run -u root --cap-add SYS_ADMIN   --restart unless-stopped --privileged -dit -v /dev/log:/dev/log --name loxilb ghcr.io/loxilb-io/loxilb:v0.8.1
 apt install -y net-tools
 sleep 3
 
