@@ -11,7 +11,7 @@ Need more time for lb end-point health check (Take almost 40 seconds)
 Summary `config.sh` file :
 ```
 docker exec -it llb1 bash
-root@8b74b5ddc4d2:/# llb1 loxicmd create lb 20.20.20.1 --tcp=2020:8080 --endpoints=100.100.100.2:1,100.100.100.3:1,100.100.100.4:1 --mode=onearm
+root@8b74b5ddc4d2:/# loxicmd create lb 20.20.20.1 --tcp=2020:8080 --endpoints=100.100.100.2:1,100.100.100.3:1,100.100.100.4:1 --mode=onearm
 ```
 
 This command will configure LB policy with basic TCP LB rule. 
