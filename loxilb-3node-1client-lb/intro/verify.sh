@@ -1,1 +1,0 @@
-stat /var/run/netns/loxilb
