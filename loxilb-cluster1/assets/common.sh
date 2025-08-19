@@ -23,7 +23,7 @@ get_docker_pid() {
 ## Pull all necessary dockers for testbed
 pull_dockers() {
   ## loxilb docker
-  docker pull ghcr.io/loxilb-io/loxilb:v0.8.1
+  docker pull ghcr.io/loxilb-io/loxilb:latest
   ## Host docker 
   docker pull eyes852/ubuntu-iperf-test:0.5
   ## BGP host docker
@@ -93,7 +93,7 @@ spawn_docker_host() {
         bgp_conf="-v $bpath:/etc/gobgp/"
       fi
     fi
-    docker run -u root --cap-add SYS_ADMIN   --restart unless-stopped --privileged -dit $bgp_conf -v /dev/log:/dev/log -v /sys/kernel/debug:/sys/kernel/debug:rw $loxilb_config --name $dname ghcr.io/loxilb-io/loxilb:v0.8.1 $bgp_opts
+    docker run -u root --cap-add SYS_ADMIN   --restart unless-stopped --privileged -dit $bgp_conf -v /dev/log:/dev/log -v /sys/kernel/debug:/sys/kernel/debug:rw $loxilb_config --name $dname ghcr.io/loxilb-io/loxilb:latest $bgp_opts
     if [[ "$ka" == "yes" ]]; then
       if [[ ! -z "$kpath" ]]; then
         ka_conf="-v $kpath:/container/service/keepalived/assets/" 
