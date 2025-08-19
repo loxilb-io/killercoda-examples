@@ -117,6 +117,7 @@ spawn_docker_host() {
   get_docker_pid $dname
   echo $pid
   if [ ! -f "$hexist/$dname" -a "$pid" != "" ]; then
+    sudo mkdir -p /var/run/netns
     sudo touch /var/run/netns/$dname
     #echo "sudo mount -o bind /proc/$pid/ns/net /var/run/netns/$2"
     sudo mount -o bind /proc/$pid/ns/net /var/run/netns/$dname
@@ -124,8 +125,10 @@ spawn_docker_host() {
 
   $hexec $dname ifconfig lo up
   $hexec $dname sysctl net.ipv6.conf.all.disable_ipv6=1 2>&1 >> /dev/null
-  $hexec $dname sysctl net.ipv4.conf.all.arp_accept=1 2>&1 >> /dev/null
-  $hexec $dname sysctl net.ipv4.conf.eth0.arp_ignore=2 2>&1 >> /dev/null
+  #$hexec $dname sysctl net.ipv4.conf.all.arp_accept=1 2>&1 >> /dev/null
+  if [ -f /proc/sys/net/ipv4/conf/eth0/arp_ignore ]; then
+    $hexec $dname sysctl net.ipv4.conf.eth0.arp_ignore=2 2>&1 >> /dev/null
+  fi
 }
 
 ## Deletes a docker host
